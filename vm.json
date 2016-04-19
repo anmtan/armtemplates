@@ -43,6 +43,7 @@
     },
     "SubnetName": {
       "type": "string",
+      "defaultValue": "FESubnet",
       "metadata": {
         "description": "Virtual Network Name."
       }
