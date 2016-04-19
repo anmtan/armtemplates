@@ -18,7 +18,7 @@
     },
     "dnsLabelPrefix": {
       "type": "string",
-      "defaultValue": "fe-vm3",
+      "defaultValue": "fe-vm",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
@@ -56,14 +56,14 @@
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "OSDiskName": "osdiskforlinuxsimple",
-    "nicName": "FEVMNic3",
+    "nicName": "FEVMNic",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "[parameters('SubnetName')]",
     "storageAccountType": "Standard_LRS",
-    "publicIPAddressName": "FEPublicIP3",
+    "publicIPAddressName": "FEPublicIP",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
-    "vmName": "FEUbuntuVM3",
+    "vmName": "FEUbuntuVM",
     "vmSize": "Standard_D1",
     "virtualNetworkName": "[parameters('VNetName')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
@@ -103,7 +103,7 @@
       "properties": {
         "ipConfigurations": [
           {
-            "name": "ipconfig2",
+            "name": "ipconfig1",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "publicIPAddress": {

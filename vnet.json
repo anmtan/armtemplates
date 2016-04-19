@@ -11,7 +11,7 @@
     },
     "virtualNetworkName": {
       "type": "string",
-      "defaultValue": "WatchNonProdVNet2",
+      "defaultValue": "WatchNonProdVNet",
       "metadata": {
         "description": "This is your Virtual Network"
       }
