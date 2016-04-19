@@ -18,7 +18,7 @@
     },
     "dnsLabelPrefix": {
       "type": "string",
-      "defaultValue": "fe-vm",
+      "defaultValue": "fe-vm3",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
