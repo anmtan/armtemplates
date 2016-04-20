@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    
+  },
+  "resources": [
+    { 
+       "apiVersion": "2015-01-01", 
+       "name": "VNetDeployment", 
+       "type": "Microsoft.Resources/deployments", 
+       "properties": { 
+         "mode": "incremental", 
+         "templateLink": {
+            "uri": "https://raw.githubusercontent.com/anmtan/armtemplates/master/vnet.json",
+            "contentVersion": "1.0.0.0"
+         }
+       } 
+    },
+    { 
+       "apiVersion": "2015-01-01", 
+       "name": "VMDeployment", 
+       "type": "Microsoft.Resources/deployments",
+       "dependsOn": [
+         "VNetDeployment"
+       ],
+       "properties": { 
+         "mode": "incremental", 
+         "templateLink": {
+            "uri": "https://raw.githubusercontent.com/anmtan/armtemplates/master/vm.json",
+            "contentVersion": "1.0.0.0"
+         }, 
+         "parameters": { 
+            "VNetName": {
+              "value" : "[reference('VNetDeployment').outputs.virtualNetworkName.value]"
+            }
+         } 
+       } 
+    } 
+  ]
+}
